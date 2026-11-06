@@ -1,100 +1,264 @@
-# Utsav: Our Culture, Our Light
 
-Utsav is a cultural festival platform for Nepal. Visitors can find Chhath ghats, explore Tihar, design a rangoli, read the festival rituals, browse a photo gallery, write festival wishes, follow a Nepali calendar and count down to the next festival.
+<div align="center">
 
-Built with React, Vite, React Router, Tailwind CSS and Lucide icons.
+# 🪔 UTSAV – Our Culture, Our Light
 
-## Pages
+### Celebrating Nepal's Festivals, Traditions, and Cultural Heritage 🇳🇵
 
-| Route | Page |
-| --- | --- |
-| `/` | Home |
-| `/chhath` | Chhath Explorer |
-| `/tihar` | Tihar Explorer |
-| `/rangoli-studio` | Rangoli Studio |
-| `/wishes` | Festival Wishes |
-| `/ritual-guide` | Ritual Guide |
-| `/gallery` | Festival Gallery (30 photographs from Wikimedia Commons) |
-| `/calendar` | Festival Calendar (Bikram Sambat and Gregorian) |
-| `/countdown` | Festival Countdown |
-| `/about` | Our Story |
+A digital journey through the beauty of Nepali festivals, traditions, rituals, and celebrations.
 
-Any other address shows a 404 page.
+**[🌐 Visit Live Website](https://utsavnepal.vercel.app/)**
 
-## Run it
+<br />
 
-You need [Node.js](https://nodejs.org) 18 or newer.
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React" />
+<img src="https://img.shields.io/badge/Vite-Build%20Tool-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
+<img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
+<img src="https://img.shields.io/badge/Tailwind%20CSS-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+<img src="https://img.shields.io/badge/Deployment-Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+
+</div>
+
+---
+
+## 📖 About the Project
+
+**Utsav – Our Culture, Our Light** is a web-based cultural platform designed to celebrate and showcase the richness of Nepal's festivals and traditions.
+
+Nepal is home to diverse cultures, communities, and celebrations. However, much of this cultural knowledge is scattered across different sources.
+
+Utsav brings important festival information, rituals, traditions, and interactive experiences together in one place.
+
+The platform initially focuses on two major Nepali festivals:
+
+- **Chhath Puja:** Celebrating devotion to the Sun God and the importance of nature.
+- **Tihar:** Celebrating the relationship between humans, animals, and nature through lights, colors, and traditions.
+
+The goal is to make cultural information accessible, interactive, and enjoyable for everyone.
+
+---
+
+## ✨ Features
+
+### 1. 🌅 Chhath Explorer
+- Explore multiple cities and Chhath celebration locations.
+- Discover popular celebration areas.
+- View available facilities at different locations.
+- Learn about the cultural and religious significance of Chhath Puja.
+
+### 2. 🪔 Tihar Experience
+- Explore the five days of Tihar.
+- Learn about the significance of each day.
+- Discover traditional customs and celebrations.
+- Understand the cultural importance of the festival.
+
+### 3. 🎨 Rangoli Studio
+- Explore ready-made Rangoli templates.
+- Customize colors and designs.
+- Add and arrange decorative elements.
+- Move and organize design elements.
+- Experiment with different creative combinations.
+
+### 4. 📅 Nepali Calendar
+- View Nepali calendar information.
+- Explore Tithi and Paksha.
+- Discover important festivals and celebrations.
+- View sunrise and sunset information where available.
+- Browse festival dates and calendar details.
+
+**Calendar Data:** Powered by the Trisambat API.
+
+### 5. ⏳ Festival Countdown
+- View countdowns to upcoming festivals.
+- Track remaining days, hours, minutes, and seconds.
+- Stay updated about important festival dates.
+
+### 6. 📸 Festival Gallery
+- Explore festival-specific photo collections.
+- Discover cultural and traditional photography.
+- Browse organized gallery sections.
+- Experience the beauty of Nepali celebrations.
+
+### 7. 📚 Ritual Guide
+- Explore festival rituals step by step.
+- Understand traditional practices.
+- Learn about cultural and religious significance.
+- Discover the meaning behind different celebrations.
+
+### 8. 💌 Festival Wishes
+- Explore festival greetings.
+- Customize wish cards.
+- Create personalized messages.
+- Export and share greeting designs.
+
+### 9. 🌟 Homepage and About
+- Explore a festival-focused landing page.
+- Discover cultural stories and traditions.
+- Learn about the purpose of Utsav.
+- Navigate through a responsive and user-friendly interface.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React 19 | Frontend development |
+| Vite | Development server and build tool |
+| JavaScript ES6+ | Application logic |
+| Tailwind CSS v4 | Styling and responsive design |
+| React Router | Client-side navigation |
+| Lucide React | Icons |
+| Trisambat API | Nepali calendar information |
+| Vercel | Deployment and hosting |
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+Make sure you have installed:
+
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SANJEEVKUMARSHAH/utsav-festival-website.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd utsav-festival-website
+```
+
+### 3. Install Dependencies
 
 ```bash
 npm install
-npm run dev        # development server, usually http://localhost:5173
-npm run build      # production build in dist/
-npm run preview    # serve the production build locally
 ```
 
-## Configuration
+### 4. Start the Development Server
 
-Copy `.env.example` to `.env` only if you need to change a setting. **No API key or secret is needed.**
+```bash
+npm run dev
+```
 
-| Variable | Purpose |
-| --- | --- |
-| `VITE_TRISAMBAT_API_BASE` | Optional. Base address of the Trisambat Nepali calendar service. Defaults to `https://trisambat.com/api/v1`. |
-
-Anything beginning with `VITE_` is visible in the browser, so never put a private key in it.
-
-## How the calendar and countdown get their data
+Open the local URL displayed in your terminal, usually:
 
 ```text
-Trisambat  ->  src/utils/festivalCalendar.js  ->  Calendar page
-                (requests, validation,        ->  Countdown page
-                 caching, normalising)
-                        |
-            if Trisambat is unavailable
-                        v
-   src/data/festivals.js + src/data/calendarObservances.js
+http://localhost:5173/
 ```
 
-- All requests go through `src/utils/festivalCalendar.js`. Components never call the API directly.
-- Requests time out after 10 seconds and share in-flight requests. Month and holiday data are cached for 12 hours; the changing `today` endpoint is cached for one minute and checked against Kathmandu's current date.
-- Event names, dates and other fields are checked and converted to safe text before use, so an unexpected response cannot crash a page.
-- If Trisambat fails, the calendar stays usable: it shows Gregorian dates, a clear message, a **Retry** button and Utsav's own festival data, labelled as an offline fallback. Fallback dates are never presented as official.
-- The countdown and the calendar both use the same service and the same local data.
+### 5. Build for Production
 
-### Update festival dates
+```bash
+npm run build
+```
 
-Edit `src/data/festivals.js` (festival dates) and `src/data/calendarObservances.js` (day-by-day Tihar observances). Only mark dates as `Published` when confirmed by a reliable Nepali calendar source. Future estimates must remain clearly marked `Expected` and should be checked again when the official calendar is released.
+### 6. Preview the Production Build
 
-## Code style
+```bash
+npm run preview
+```
 
-Handwritten JavaScript, JSX and CSS use a consistent two-space indentation style and readable multiline structures. `.editorconfig` supplies the editor defaults. Keep JSX, object literals, arrays, and CSS declarations expanded enough to avoid unnecessary horizontal scrolling.
+---
 
-## Project structure
+## 📁 Project Structure
+
+The project follows a modular structure to keep components, pages, assets, and application logic organized.
 
 ```text
-src/
-├── main.jsx, App.jsx        Entry point and routes
-├── components/              Header, Footer, Eyebrow, ScrollTop, RouteErrorBoundary
-├── pages/                   One file per route (Rangoli Studio has its own folder)
-├── data/                    Festival, gallery, ritual, city and wish content
-├── utils/festivalCalendar.js   Calendar data service
-├── hooks/useCountdown.js
-└── styles/
-    ├── index.css            Site-wide styles
-    ├── phase2.css           Festival feature pages
-    └── responsive.css       Touch targets, focus styles, small-screen fixes, 404 page
+utsav-festival-website/
+│
+├── public/
+│   └── assets/
+│       └── images/
+│
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── pages/
+│   ├── utils/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
 ```
 
-## Deploying
+---
 
-This is a single-page app. Static hosts must send every address to `index.html`, or opening or refreshing a page such as `/calendar` will show the host's 404 page. `npm run dev` and `npm run preview` already do this. Add the equivalent rewrite rule on your host.
+## 🌐 Live Demo
 
-## Known limitations
+Experience Utsav:
 
-- Trisambat's public API documentation was checked during this review. It is a beta service, has no uptime guarantee, and is not an official government calendar. Confirm important religious dates with the official Panchanga or Government of Nepal.
-- Trisambat asks websites using its data to show a visible link back to `trisambat.com`; Utsav now displays this attribution on the Calendar and Countdown pages.
-- Gallery photographs load from Wikimedia Commons and need an internet connection. Check each photo's author and licence on its Commons page before commercial use.
-- Offline festival dates are a limited safety net, not a complete official calendar. Some future entries are marked "Expected" and must be confirmed before planning.
+**[https://utsavnepal.vercel.app/](https://utsavnepal.vercel.app/)**
 
-## Credits
+---
 
-Calendar data: Trisambat. Photographs: Wikimedia Commons contributors. Icons: [Lucide](https://lucide.dev). Designed and built by Sanjeev Kumar Shah.
+## 🔗 API Reference
+
+The Nepali calendar feature uses the Trisambat API.
+
+- **Documentation:** https://docs.trisambat.com/
+
+**Note:** Trisambat is currently in beta. Its calendar information should not be considered an official Government of Nepal calendar.
+
+---
+
+## 🎯 Project Vision
+
+Utsav aims to bring Nepal's cultural heritage closer to people through technology.
+
+The vision is to create a platform where people can:
+
+- Discover the diversity of Nepali festivals.
+- Understand cultural traditions and rituals.
+- Explore celebrations across different locations.
+- Experience festivals through interactive digital tools.
+- Preserve and share cultural knowledge with future generations.
+
+**Our culture is our identity, and technology can help keep it alive.**
+
+---
+
+## 👨‍💻 Developer
+
+<div align="center">
+
+### Sanjeev Kumar Shah
+
+Computer Engineering Student | Web Developer | Technology Enthusiast
+
+[Portfolio](https://sanjeevkumarshah.com.np/) • [LinkedIn](https://www.linkedin.com/in/sanjeev-kumar-shah-749a11380/) • [GitHub](https://github.com/SANJEEVKUMARSHAH)
+
+</div>
+
+---
+
+## 📜 License
+
+No open-source license has currently been specified for this project. All rights are reserved by the copyright holder unless otherwise stated.
+
+---
+
+<div align="center">
+
+### 🪔 Utsav – Our Culture, Our Light 🇳🇵
+
+**Celebrating traditions. Connecting cultures. Preserving heritage.**
+
+Made with ❤️ in Nepal.
+
+</div>
