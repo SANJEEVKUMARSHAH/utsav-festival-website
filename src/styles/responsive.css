@@ -1,0 +1,233 @@
+/*Production refinements for small screens and keyboard users. Loaded after all other styles.*/
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+/*Visible keyboard focus everywhere.*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #e6bd69;
+  outline-offset: 3px;
+}
+/*Comfortable touch targets.*/
+.mobile-menu {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+}
+.day-progress button {
+  position: relative;
+}
+.day-progress button::after {
+  content: "";
+  position: absolute;
+  inset: -20px -6px;
+}
+@media (max-width: 760px) {
+  body.nav-locked {
+    overflow: hidden;
+  }
+  .footer a {
+    display: inline-block;
+    padding: 10px 0;
+  }
+  .city-counts button {
+    min-height: 40px;
+  }
+  .calendar-search button {
+    display: grid;
+    place-items: center;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+/*404 page*/
+.not-found {
+  min-height: 62vh;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 14px;
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 80px 0;
+}
+.not-found-code {
+  margin: 0;
+  color: #e6bd69;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+.not-found h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 4rem);
+}
+.not-found p {
+  margin: 0;
+  color: #cdbdb1;
+}
+
+
+/* Focused responsive fixes for the existing Chhath and Tihar story sections. */
+.festival-story {
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  padding-inline: clamp(18px, 4vw, 64px);
+  gap: clamp(20px, 4vw, 56px);
+  min-width: 0;
+}
+.festival-story > *,
+.festival-story-copy {
+  min-width: 0;
+}
+.festival-story-image {
+  width: 100%;
+  min-width: 0;
+  min-height: clamp(260px, 34vw, 420px);
+  aspect-ratio: 4 / 3;
+}
+.festival-story-copy {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+.festival-story-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  overflow-wrap: anywhere;
+}
+.festival-story-copy p {
+  max-width: 68ch;
+}
+.tihar-story {
+  background: #21171a;
+}
+@media (max-width: 900px) {
+  .festival-story {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding-inline: clamp(18px, 4vw, 32px);
+  }
+  .festival-story-image {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 390px;
+  }
+  .festival-story-copy {
+    max-width: 760px;
+    padding: 8px 0 12px;
+  }
+}
+@media (max-width: 480px) {
+  .festival-story {
+    padding: 58px 18px;
+    gap: 12px;
+  }
+  .festival-story-image {
+    aspect-ratio: 5 / 4;
+    border-radius: 14px;
+  }
+  .festival-story-copy {
+    padding: 8px 0 0;
+  }
+  .festival-story-copy h2 {
+    font-size: clamp(1.85rem, 9vw, 2.45rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    margin: 12px 0 18px;
+  }
+  .festival-story-copy h2 br {
+    display: none;
+  }
+  .festival-story-copy p {
+    font-size: 0.96rem;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .story-note {
+    padding: 13px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 360px) {
+  .festival-story {
+    padding-inline: 14px;
+  }
+  .festival-story-copy h2 {
+    font-size: 1.85rem;
+  }
+}
+/* Keep the festival wish actions usable at narrow widths. */
+.wish-studio-actions {
+  min-width: 0;
+}
+.wish-studio-actions button {
+  min-height: 44px;
+  justify-content: center;
+  white-space: normal;
+}
+.wish-studio-actions button:focus-visible,
+.wish-tabs button:focus-visible,
+.wish-tool-content button:focus-visible {
+  outline: 2px solid #f0c46f;
+  outline-offset: 3px;
+}
+.wishes-studio .phase-note[role="status"] {
+  padding: 10px 13px;
+  border: 1px solid #654653;
+  border-radius: 9px;
+  color: #f0d8ad;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 520px) {
+  .wish-studio-shell {
+    padding: 10px;
+  }
+  .wish-studio-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .wish-studio-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+  .wish-studio-actions button {
+    min-width: 0;
+    padding: 10px 8px;
+    font-size: 0.78rem;
+  }
+  .wish-studio-actions button:first-child:last-child {
+    grid-column: 1 / -1;
+  }
+  .wish-canvas-top {
+    flex-wrap: wrap;
+    font-size: 0.65rem;
+    line-height: 1.5;
+  }
+  .wish-canvas-wrap {
+    padding: 9px;
+  }
+}
+@media (max-width: 360px) {
+  .wish-studio-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .wish-tabs button {
+    font-size: 0.65rem;
+  }
+  .wish-tool-content {
+    padding: 14px;
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://utsavnepal.vercel.app/sitemap.xml
